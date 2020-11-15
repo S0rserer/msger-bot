@@ -4,7 +4,8 @@
 const
   express = require('express'),
   bodyParser = require('body-parser'),
-  app = express().use(bodyParser.json()); // creates express http server
+  cors = require('cors'),
+  app = express().use(bodyParser.json()).use(cors()); // creates express http server
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 80, () => console.log('webhook is listening'));
