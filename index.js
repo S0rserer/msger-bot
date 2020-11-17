@@ -62,11 +62,20 @@ app.get('/webhook', (req, res) => {
         res.sendStatus(403);      
       }
     } else {
-      res.sendStatus(403);
+      res.sendStatus("Empty page");
     }
   });
 
   app.get('/', (req, res) => {
-
     res.status(200).send("Hello");
   });
+
+  var corsOptions = {
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1 || !origin) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    }
+  }
