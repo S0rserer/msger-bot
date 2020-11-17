@@ -62,7 +62,7 @@ app.get('/webhook', (req, res) => {
         res.sendStatus(403);      
       }
     } else {
-      res.sendStatus("Empty page");
+      res.sendStatus(200).send("Empty page");
     }
   });
 
