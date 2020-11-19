@@ -107,10 +107,10 @@ function callSendAPI(sender_psid, response) {
     },
     "message": response
   }
-
+  PAGE_ACCESS_TOKEN = "<fcbktoken>";
   request({
     "uri": "https://graph.facebook.com/v2.6/me/messages",
-    "qs": { "access_token": "<fcbktoken>" },
+    "qs": { "access_token": PAGE_ACCESS_TOKEN },
     "method": "POST",
     "json": request_body
   }, (err, res, body) => {
