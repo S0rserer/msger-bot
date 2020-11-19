@@ -2,7 +2,7 @@
 
 // Imports dependencies and set up http server
 const
-  PAGE_ACCESS_TOKEN = "<fcbktoken>",
+  PAGE_ACCESS_TOKEN = "<EAAwE1FLAo6wBAKYHHh4cUjYWP7cwDiRfwrwN9ZBzigS8z5QZBxzqMMJcdhuU98vdm6IAv9tHWxNDM8gYKWcR67NxsZC8UdBSmcZB18DHEYddXIxkB5myORBE9EjZCWh53hL0lfMZB8oN4GODGEgDcjmKDNGtvYMovhNLBpUbqhVkW6kEtcMtXe>",
   express = require('express'),
   bodyParser = require('body-parser'),
   cors = require('cors'),
