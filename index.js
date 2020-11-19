@@ -87,7 +87,7 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message
     response = {
       "text": `You sent the message: "${received_message.text}". Now send me an image!`
-    }
+    };
   }  
   
   // Sends the response message
@@ -106,16 +106,16 @@ function callSendAPI(sender_psid, response) {
       "id": sender_psid
     },
     "message": response
-  }
-   let PAGE_ACCESS_TOKEN = "<fcbktoken>";
+  };
+
   request({
     "uri": "https://graph.facebook.com/v2.6/me/messages",
-    "qs": { "access_token": PAGE_ACCESS_TOKEN },
+    "qs": { "access_token": "<fcbktoken>" },
     "method": "POST",
     "json": request_body
   }, (err, res, body) => {
     if (!err) {
-      console.log('message sent!')
+      console.log('message sent!');
     } else {
       console.error("Unable to send message:" + err);
     }
