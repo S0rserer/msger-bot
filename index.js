@@ -5,6 +5,7 @@ const
   express = require('express'),
   bodyParser = require('body-parser'),
   cors = require('cors'),
+  request = require('request'),
   app = express().use(bodyParser.json()).use(cors());
    // creates express http server
 
