@@ -2,6 +2,7 @@
 
 // Imports dependencies and set up http server
 const
+  PAGE_ACCESS_TOKEN = "<fcbktoken>",
   express = require('express'),
   bodyParser = require('body-parser'),
   cors = require('cors'),
@@ -51,7 +52,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
     // Your verify token. Should be a random string.
-    let VERIFY_TOKEN = "<fcbktoken>";
+    const VERIFY_TOKEN = PAGE_ACCESS_TOKEN;
       
     // Parse the query params
     let mode = req.query['hub.mode'];
@@ -110,7 +111,7 @@ function callSendAPI(sender_psid, response) {
 
   request({
     "uri": "https://graph.facebook.com/v2.6/me/messages",
-    "qs": { "access_token": "<fcbktoken>" },
+    "qs": { "access_token": PAGE_ACCESS_TOKEN },
     "method": "POST",
     "json": request_body
   }, (err, res, body) => {
